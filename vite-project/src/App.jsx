@@ -108,11 +108,11 @@ if(type === "increase")
     <UserContext.Provider value={user}>
       <CartContext.Provider value={{cart, addToCart, removeFromCart, updateCart, setCart }}>
     <div className="App">
-      <Navbar />
-      <main>
+      {/* <main> */}
       <ToastContainer position="bottom-right" />
+      <Navbar />
       <Routing />
-      </main>
+      {/* </main> */}
     </div>
     </CartContext.Provider>
     </UserContext.Provider>

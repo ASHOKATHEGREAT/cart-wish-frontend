@@ -1,7 +1,7 @@
 import  apiClient from "../Utils/api-client"
 
 export function addToCartAPI (id, quantity) {
-   return apiClient.post(`/api/${id}`,{quantity})
+   return apiClient.post(`/cart/${id}`,{quantity})
 }
 
 export function getCartAPI () {

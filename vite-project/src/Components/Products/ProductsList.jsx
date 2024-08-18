@@ -11,7 +11,7 @@ import Pagination from '../Common/Pagination'
 const ProductsList = () => {
 const [page, setPage] = useState(1)
 const [sortBy, setSortBy] = useState("")
-const [sortedProducts, setSortedProducts] = uSeState([])
+const [sortedProducts, setSortedProducts] = useState([])
 
 
 const [search, setSearch] = useSearchParams();
@@ -52,7 +52,8 @@ useEffect(() => {
     }
   }
   window.addEventListener('scroll', handleScroll)
-  return () => window.removeEventListener('scroll', handleScroll)},[data, isLoading])
+  return () => window.removeEventListener('scroll', handleScroll)
+},[data, isLoading])
 
   useEffect(() => {
     if(data && data.products) {
@@ -72,7 +73,7 @@ useEffect(() => {
     else {
       setSortedProducts(products)
     }}
-})
+},[data])
 
 
   return (

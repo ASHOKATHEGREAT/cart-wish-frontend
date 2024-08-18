@@ -32,7 +32,8 @@ const Navbar = () => {
   };
 
    const handleKeyDown = (e) => {
-    if(selectedItem < suggestions.length) {if (e.key === "ArrayDown") {
+    if(selectedItem < suggestions.length) {
+      if (e.key === "ArrayDown") {
       setSelectedItem(current => current === suggestions.length -1 ? 0 
         : current + 1)
     }
@@ -46,9 +47,11 @@ const Navbar = () => {
       setSearch("")
       setSuggestions([])
    }
-  } else {
+  } 
+  else {
     setSelectedItem(-1)
   }
+}
     
 
   useEffect (() => {
@@ -63,7 +66,8 @@ const Navbar = () => {
 },[search])
 
   return (
-    <nav className='align_center navbar'>
+    <div className='align_center navbar'>
+      
         <div className='align_center'>
             <h1 className='navbar_heading'>CartWish</h1>
             <form 
@@ -105,8 +109,10 @@ const Navbar = () => {
             <LinkWithIcon title='Logout' link='/logout' emoji={lock} />
             <NavLink to="/cart" className='align_center'>Cart <p className='align_center cart_counts'>{cart.length}</p> </NavLink></>}
         </div>
-    </nav>
+    </div>
+   
   )
+
 }
-}
+
 export default Navbar
